@@ -1,12 +1,12 @@
-use anyhow::{Ok, Result};
+use anyhow::Result;
 use solana_client::nonblocking::rpc_client::RpcClient;
-use solana_commitment_config::CommitmentConfig;
+use solana_sdk::commitment_config::CommitmentConfig;
 use solana_sdk::{
-    program_pack::Pack,
-    signature::{Keypair, Signer},
-    transaction::Transaction
+  program_pack::Pack,
+  signature::{Keypair, Signer},
+  system_instruction::create_account,
+  transaction::Transaction,
 };
-use solana_system_interface::instruction::create_account;
 use spl_token_2022_interface::{
     id as token_2022_program_id, instruction::initialize_mint, state::Mint
 };
