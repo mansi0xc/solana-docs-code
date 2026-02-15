@@ -15,4 +15,9 @@ async fn main() {
         Ok(_) => println!("Token creation and fetching successful"),
         Err(e) => eprintln!("Error encountered during token creation: {}", e),
     }
+
+    match funding::fund_wallet().await {
+        Ok(_) => println!("Wallet funded successfully!"),
+        Err(e) => eprint!("Error encountered during wallet funding: {}", e),
+    }
 }
