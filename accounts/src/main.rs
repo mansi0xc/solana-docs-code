@@ -11,4 +11,8 @@ async fn main() {
         Ok(_) => println!("Token account fetched successfully"),
         Err(e) => eprintln!("Error fetching token account: {}", e),
     }
+    match create_token::create_and_fetch().await {
+        Ok(_) => println!("Token creation and fetching successful"),
+        Err(e) => eprintln!("Error encountered during token creation: {}", e),
+    }
 }
