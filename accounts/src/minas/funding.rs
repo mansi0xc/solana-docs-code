@@ -29,3 +29,32 @@ pub async fn fund_wallet() -> Result<()> {
 
     Ok(())
 }
+
+/*
+kit version:
+import {
+  airdropFactory,
+  createSolanaRpc,
+  createSolanaRpcSubscriptions,
+  generateKeyPairSigner,
+  lamports
+} from "@solana/kit";
+
+// Create a connection to Solana cluster
+const rpc = createSolanaRpc("http://localhost:8899");
+const rpcSubscriptions = createSolanaRpcSubscriptions("ws://localhost:8900");
+
+// Generate a new keypair
+const keypair = await generateKeyPairSigner();
+console.log(`Public Key: ${keypair.address}`);
+
+// Funding an address with SOL automatically creates an account
+const signature = await airdropFactory({ rpc, rpcSubscriptions })({
+  recipientAddress: keypair.address,
+  lamports: lamports(1_000_000_000n),
+  commitment: "confirmed"
+});
+
+const accountInfo = await rpc.getAccountInfo(keypair.address).send();
+console.log(accountInfo);
+ */

@@ -18,6 +18,11 @@ async fn main() {
 
     match funding::fund_wallet().await {
         Ok(_) => println!("Wallet funded successfully!"),
-        Err(e) => eprint!("Error encountered during wallet funding: {}", e),
+        Err(e) => eprintln!("Error encountered during wallet funding: {}", e),
+    }
+
+    match sysvar::fetch_sys_data().await {
+        Ok(_) => println!("Sysvar data fetched successfully!"),
+        Err(e) => eprintln!("Error encountered sysvar data fetching: {}", e),
     }
 }
